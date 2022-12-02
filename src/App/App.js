@@ -40,7 +40,7 @@ function App() {
         <Route path='/gym' element={<Gym/>}/>
         <Route path='/canteen' element={<Canteen/>}/>
       </Routes>
-        <Footer/>
+        <Footer isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
     </div>
       </AuthProvider>
   );
