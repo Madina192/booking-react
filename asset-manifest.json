@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/booking-react/static/css/main.6df2c13b.css",
+    "main.js": "/booking-react/static/js/main.61808f34.js",
+    "static/media/pic2.jpg": "/booking-react/static/media/pic2.20a113a8b83dca965b94.jpg",
+    "static/media/alatoo.jpg": "/booking-react/static/media/alatoo.d1898dbc65a037f96109.jpg",
+    "static/media/pic1.jpg": "/booking-react/static/media/pic1.49faf20c3e14a773212d.jpg",
+    "static/media/pic3.webp": "/booking-react/static/media/pic3.9dfb7b752c4447a4f1ce.webp",
+    "static/media/logo.png": "/booking-react/static/media/logo.4ecca571996a1dd6750d.png",
+    "static/media/dance.jpg": "/booking-react/static/media/dance.1e91f58e0ba239766d38.jpg",
+    "static/media/konya.jpg": "/booking-react/static/media/konya.48db706f0ed9d1c54256.jpg",
+    "static/media/football.jpg": "/booking-react/static/media/football.479b3423beeaefe501eb.jpg",
+    "static/media/basketball.jpg": "/booking-react/static/media/basketball.71959ab75fb652b94e11.jpg",
+    "static/media/besedka.jpg": "/booking-react/static/media/besedka.5ff6e3ab51a5b21c418d.jpg",
+    "static/media/revicons.eot": "/booking-react/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/booking-react/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/tennis.jpg": "/booking-react/static/media/tennis.a00bc02f9deeed3315b5.jpg",
+    "static/media/revicons.woff": "/booking-react/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/booking-react/index.html",
+    "main.6df2c13b.css.map": "/booking-react/static/css/main.6df2c13b.css.map",
+    "main.61808f34.js.map": "/booking-react/static/js/main.61808f34.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6df2c13b.css",
+    "static/js/main.61808f34.js"
+  ]
+}
