@@ -16,10 +16,16 @@ import Picnic from "../pages/Picnic";
 import Conference from "../pages/Conference";
 import Gym from "../pages/Gym";
 import Canteen from "../pages/Canteen";
+import Map from "../pages/Map";
 
 function App() {
     const  [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === 'true')
     const  [userEmail, setUserEmail] = useState(null)
+    const  [password, setPassword] = useState(null)
+    const [emailReg, setEmailReg] = useState('')
+    const [firstNameReg, setFirstNameReg] = useState('')
+    const [lastNameReg, setLastNameReg] = useState('')
+    const [passwordReg, setPasswordReg] = useState('')
   return (
       <AuthProvider>
     <div className="App">
@@ -27,9 +33,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userEmail={userEmail} setUserEmail={setUserEmail}/>}/>
         <Route path='/book' element={<Home/>}/>
-        <Route exact='true' path='/login' element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userEmail={userEmail} setUserEmail={setUserEmail}/>}/>
-        <Route exact='true' path='/signup' element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userEmail={userEmail} setUserEmail={setUserEmail}/>}/>
-        <Route path='/map' element={<Home/>}/>
+        <Route exact='true' path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} userEmail={userEmail} setUserEmail={setUserEmail} emailReg={emailReg} setEmailReg={setEmailReg} firstNameReg={firstNameReg} setFirstNameReg={setFirstNameReg} lastNameReg={lastNameReg} setLastNameReg={setLastNameReg} passwordReg={passwordReg} setPasswordReg={setPasswordReg}/>}/>
+        <Route exact='true' path='/signup' element={<Signup setIsLoggedIn={setIsLoggedIn} userEmail={userEmail} setUserEmail={setUserEmail} emailReg={emailReg} setEmailReg={setEmailReg} firstNameReg={firstNameReg} setFirstNameReg={setFirstNameReg} lastNameReg={lastNameReg} setLastNameReg={setLastNameReg} passwordReg={passwordReg} setPasswordReg={setPasswordReg}/>}/>
+        <Route path='/map' element={<Map/>}/>
         <Route path='/football' element={<Football/>}/>
         <Route path='/basketball' element={<Basketball/>}/>
         <Route path='/volleyball' element={<Volleyball/>}/>

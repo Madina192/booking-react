@@ -39,9 +39,7 @@
 }
 
 .calendar-box {
-    position: absolute;
-    top: 80px;
-    left: 0px;
+
     width: 750px;
     max-height: 580px;
 }
@@ -63,4 +61,9 @@ select {
 
 .e-control.e-schedule.e-lib.e-keyboard {
     height: 600px;
+}
+
+.fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+    width: 700px;
+    height: 500px;
 }

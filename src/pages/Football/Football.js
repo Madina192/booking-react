@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
 import pic1 from "../../imgs/football_img/pic1.jpg"
@@ -10,13 +10,21 @@ import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import {useState} from "react";
-import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month} from "@syncfusion/ej2-react-schedule"
+//import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month} from "@syncfusion/ej2-react-schedule"
 import Calendar from 'react-calendar';
+import FullCalendar from "@fullcalendar/react"
+import interactionPlugin from "@fullcalendar/interaction";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import dayGridMonth from "@fullcalendar/daygrid";
+import timeGridWeek from "@fullcalendar/timegrid";
+import timeGridDay from "@fullcalendar/timegrid";
+import Schedule from "../../components/Schedule";
+import * as events from "events";
+import Event from "../../components/Event";
 
 const Football = () => {
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 1
         },
@@ -33,15 +41,42 @@ const Football = () => {
             items: 1
         }
     };
-    const [date, setDate] = useState([
-        {
-            startDate: new Date(),
-            endDate: null,
-            key: 'selection'
-        }
-    ]);
     const [openDate, setOpenDate] = useState(false)
-    const [value, onChange] = useState(new Date());
+    const [value, setValue] = useState(new Date())
+    const [showTime, setShowTime] = useState(false);
+    const [schedule, setSchedule] = useState([]);
+
+    const createTable = () => {
+        setShowTime(!showTime)
+        const date = document.querySelector('.react-calendar__month-view__days')
+        const count = date.children.length;
+        const dateArray = [date.children]
+        console.log(dateArray.length)
+        console.log('clicked!')
+    }
+    useEffect(() => {
+        setSchedule([...schedule, {id: value}])
+        console.log(value)
+
+    }, []);
+    const [events, setEvents] = useState([]);
+    const [submit, setSubmit] = useState(false);
+
+    const handleSelect = (info) => {
+        const { start, end } = info;
+        setShowTime(true)
+        const eventNamePrompt = prompt("Enter your group name");
+
+        if (eventNamePrompt) setEvents([
+            ...events,
+            {
+                start,
+                end,
+                title: eventNamePrompt,
+                id: events.length === 0 ? 1 : events[events.length - 1].id + 1,
+            },
+        ])
+    }
 
     return (
         <div className='football'>
@@ -85,11 +120,28 @@ const Football = () => {
                     <FontAwesomeIcon icon={faCalendarDays} className='icon'/>
                 </button>
                 <div className="calendar-box">
-                    { openDate && <Calendar onChange={onChange} value={value} />}
+                    { openDate && <FullCalendar
+                        editable
+                        selectable
+                        events={events}
+                        select={handleSelect}
+                        headerToolbar={{
+                            start: "today prev next",
+                            end: "timeGridWeek timeGridDay"
+                        }}
+                        eventContent={(info) => <Schedule info={info} events={events}/>}
+                        plugins={[timeGridPlugin, interactionPlugin]}
+                        views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
+                        allDaySlot={false}
+                        slotMinTime='09:00:00'
+                        slotLabelInterval='00:30:00'
+                    />}
                 </div>
             </div>
             <div className="schedule">
 
+            </div>
+            <div className="time">
             </div>
 
         </div>

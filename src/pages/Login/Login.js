@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import background from "../../imgs/alatoo.jpg";
 import { useNavigate } from "react-router-dom"
 
-const Login = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
+const Login = ({setIsLoggedIn, setUserEmail, userEmail}) => {
     // const auth = useAuth()
     const navigate = useNavigate()
     const handleLogIn =(e) => {

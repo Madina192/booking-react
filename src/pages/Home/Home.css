@@ -1,13 +1,24 @@
 .home {
     text-align: center;
+    position: relative;
 }
+
 .home-title {
-    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 45px;
+}
+
+.home-text {
+    position: absolute;
+    top: 150px;
+    left: 18%;
+    color: white;
+    font-size: 60px;
 }
 
 .carousel-box {
     width: 100%;
-    height: 500px;
+    height: 100%;
     margin-top: 60px;
 }
 
@@ -38,4 +49,9 @@ ul {
 
 .btn-box {
     margin-top: 20px;
+}
+
+#text {
+    color: #68e183;
+    text-shadow: 1px 1px 2px yellow;
 }
