@@ -11,7 +11,6 @@ import gym from "../../imgs/free-icon-weightlifting-2738793.png";
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
 import {useNavigate} from "react-router-dom";
-import background from "../../imgs/alatoo.jpg";
 import {useEffect} from "react";
 
 const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
@@ -79,8 +78,6 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
     }
     return (
         <div className='home'>
-            {/*<img className='login-img' src={background} alt=""/>*/}
-            {/*<h2 className="home-text">Book online <span id="text"></span></h2>*/}
             <div className="home-box">
                 <div className="carousel-box">
                     <h1 className="home-title">
@@ -112,7 +109,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={football} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToFootball}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -120,7 +117,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={basketball} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToBasketball}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -128,7 +125,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={volleyball} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToVolleyball}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -136,7 +133,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={gym} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToGym}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -144,7 +141,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={tennis} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToTennis}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -152,7 +149,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={picnic} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToPicnic}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -160,7 +157,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={konya} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToConference}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -168,7 +165,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={canteen} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToCanteen}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                         <div className='carousel-min_box'>
@@ -176,7 +173,7 @@ const Home = ({isLoggedIn, setIsLoggedIn, setUserEmail, userEmail}) => {
                             <img src={dance} alt="" className="carousel-img"/>
                             <div className="btn-box">
                                 <button className="login-btn first" type='click' onClick={goToDancing}>See more</button>
-                                <button className="login-btn" type='click'>Book</button>
+                                <button className="login-btn" type='click' onClick={goToFootball}>Book</button>
                             </div>
                         </div>
                     </Carousel>

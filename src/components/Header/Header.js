@@ -18,7 +18,6 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                 <img className='header-logo' src={logo} alt=""/>
                 <nav className='nav'>
                     <Link className='nav-link' exact='true' to='/'>Home</Link>
-                    <Link className='nav-link' exact='true' to='/book'>Book place</Link>
                     <Link className='nav-link' to='/map'>Location</Link>
                     {
                         !isLoggedIn ? (

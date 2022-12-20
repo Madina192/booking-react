@@ -1,26 +1,21 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
-import pic1 from "../../imgs/football_img/pic1.jpg"
-import pic2 from "../../imgs/football_img/pic2.jpg"
-import pic3 from "../../imgs/football_img/pic3.webp"
+import football_1 from "../../imgs/football_1.jpg"
+import football_2 from "../../imgs/football_2.jpg"
+import football_4 from "../../imgs/football_4.jpg"
+import football_3 from "../../imgs/football_3.jpg"
 import 'react-calendar/dist/Calendar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import {useState} from "react";
-//import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month} from "@syncfusion/ej2-react-schedule"
-import Calendar from 'react-calendar';
 import FullCalendar from "@fullcalendar/react"
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridMonth from "@fullcalendar/daygrid";
-import timeGridWeek from "@fullcalendar/timegrid";
-import timeGridDay from "@fullcalendar/timegrid";
 import Schedule from "../../components/Schedule";
-import * as events from "events";
-import Event from "../../components/Event";
 
 const Football = () => {
     const responsive = {
@@ -42,25 +37,8 @@ const Football = () => {
         }
     };
     const [openDate, setOpenDate] = useState(false)
-    const [value, setValue] = useState(new Date())
     const [showTime, setShowTime] = useState(false);
-    const [schedule, setSchedule] = useState([]);
-
-    const createTable = () => {
-        setShowTime(!showTime)
-        const date = document.querySelector('.react-calendar__month-view__days')
-        const count = date.children.length;
-        const dateArray = [date.children]
-        console.log(dateArray.length)
-        console.log('clicked!')
-    }
-    useEffect(() => {
-        setSchedule([...schedule, {id: value}])
-        console.log(value)
-
-    }, []);
     const [events, setEvents] = useState([]);
-    const [submit, setSubmit] = useState(false);
 
     const handleSelect = (info) => {
         const { start, end } = info;
@@ -104,17 +82,21 @@ const Football = () => {
                     renderDotsOutside={false}
                 >
                     <div className="football-min_box">
-                        <img src={pic1} alt="" className="football-img"/>
+                        <img src={football_1} alt="" className="football-img"/>
                     </div>
                     <div className="football-min_box">
-                        <img src={pic2} alt="" className="football-img"/>
+                        <img src={football_2} alt="" className="football-img"/>
                     </div>
                     <div className="football-min_box">
-                        <img src={pic3} alt="" className="football-img"/>
+                        <img src={football_4} alt="" className="football-img"/>
+                    </div>
+                    <div className="football-min_box">
+                        <img src={football_3} alt="" className="football-img"/>
                     </div>
                 </Carousel>
             </div>
             <div className="form-box">
+                <h2 className="football-title">Click on the time you want to book and enter your group name</h2>
                 <button className="calendar-btn" onClick={() => setOpenDate(!openDate)}>
                     <h3 className="calendar-btn_title">Choose date</h3>
                     <FontAwesomeIcon icon={faCalendarDays} className='icon'/>
@@ -138,12 +120,6 @@ const Football = () => {
                     />}
                 </div>
             </div>
-            <div className="schedule">
-
-            </div>
-            <div className="time">
-            </div>
-
         </div>
     );
 };

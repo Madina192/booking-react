@@ -16,11 +16,16 @@
 }
 
 .nav-link {
-    font-size: 20px;
+    font-size: 25px;
     text-decoration: none;
     color: white;
     margin-right: 20px;
     margin-top: 40px;
+}
+
+.nav-link:hover{
+    color: #225859;
+    text-shadow: 1px 1px 2px white;
 }
 
 .logout-btn {

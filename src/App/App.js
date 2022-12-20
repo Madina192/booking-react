@@ -17,6 +17,7 @@ import Conference from "../pages/Conference";
 import Gym from "../pages/Gym";
 import Canteen from "../pages/Canteen";
 import Map from "../pages/Map";
+import Auth2 from "../components/Auth2";
 
 function App() {
     const  [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === 'true')

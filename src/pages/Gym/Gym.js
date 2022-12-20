@@ -2,11 +2,15 @@ import React from 'react';
 import {useState} from "react";
 import Carousel from "react-multi-carousel";
 import gym_photo from "../../imgs/gym_photo.jpg";
-import pic2 from "../../imgs/football_img/pic2.jpg";
-import pic3 from "../../imgs/football_img/pic3.webp";
+import pic2 from "../../imgs/gym_2.jpg";
+import pic3 from "../../imgs/gym_3.jpg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarDays} from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
+import FullCalendar from "@fullcalendar/react";
+import Schedule from "../../components/Schedule";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
 const Gym = () => {
     const responsive = {
@@ -28,19 +32,30 @@ const Gym = () => {
             items: 1
         }
     };
-    const [date, setDate] = useState([
-        {
-            startDate: new Date(),
-            endDate: null,
-            key: 'selection'
-        }
-    ]);
+
     const [openDate, setOpenDate] = useState(false)
-    const [value, onChange] = useState(new Date());
+    const [showTime, setShowTime] = useState(false);
+    const [events, setEvents] = useState([]);
+
+    const handleSelect = (info) => {
+        const { start, end } = info;
+        setShowTime(true)
+        const eventNamePrompt = prompt("Enter your group name");
+
+        if (eventNamePrompt) setEvents([
+            ...events,
+            {
+                start,
+                end,
+                title: eventNamePrompt,
+                id: events.length === 0 ? 1 : events[events.length - 1].id + 1,
+            },
+        ])
+    }
 
     return (
         <div className='football'>
-            <h2 className="football-title">Gym</h2>
+            <h2 className="football-title">Sports Hall</h2>
             <div className="football-box">
                 <Carousel
                     responsive={responsive}
@@ -75,18 +90,30 @@ const Gym = () => {
                 </Carousel>
             </div>
             <div className="form-box">
+                <h2 className="football-title">Click on the time you want to book and enter your group name</h2>
                 <button className="calendar-btn" onClick={() => setOpenDate(!openDate)}>
                     <h3 className="calendar-btn_title">Choose date</h3>
                     <FontAwesomeIcon icon={faCalendarDays} className='icon'/>
                 </button>
                 <div className="calendar-box">
-                    { openDate && <Calendar onChange={onChange} value={value} />}
+                    { openDate && <FullCalendar
+                        editable
+                        selectable
+                        events={events}
+                        select={handleSelect}
+                        headerToolbar={{
+                            start: "today prev next",
+                            end: "timeGridWeek timeGridDay"
+                        }}
+                        eventContent={(info) => <Schedule info={info} events={events}/>}
+                        plugins={[timeGridPlugin, interactionPlugin]}
+                        views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
+                        allDaySlot={false}
+                        slotMinTime='09:00:00'
+                        slotLabelInterval='00:30:00'
+                    />}
                 </div>
             </div>
-            <div className="schedule">
-
-            </div>
-
         </div>
     );
 };
