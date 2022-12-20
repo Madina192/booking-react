@@ -2,10 +2,11 @@
 
 ## I created this website on React JS.
 ## Since I'm alone in the team, I did frontend. But I also wrote backend using Node JS, Express JS, PostgreSQL, it works, but couldn't connect to frontend.
-## Link to website:
+## Link to website: 
+## Link to research: https://drive.google.com/file/d/1oG_KnNiEgz4tBHDxBl-yF_-NHi11VVtB/view?usp=sharing
 ## Home page
 ## There is carousel of booking places at our univercity:
-![](sc1.png)
+![](Screenshot 2022-12-20 23.36.02.png)
 ## Sign up page:
 ## You can sign up on this page by entering your email, name, last name and password, it saves your name to localStorage:
 
