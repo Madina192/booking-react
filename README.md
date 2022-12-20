@@ -15,6 +15,16 @@
 ## When you click "see more" button in a specific box on home page, you go to the page where you can book it:
 ![](scr_4.png)
 ## Book page
-## There are some photos and on the bottom there is button "choose date"
+## There are some photos and on the bottom there is button "choose date":
+![](scr_5.png)
+## If you click the button, you'll see calendar for booking. When you click any time a new box with an input appears, where you enter your group name, then you'll see your group name on calendar.
+![](scr_6.png)
+![](scr_7.png)
+![](scr_8.png)
+## You can choose week or day calendar on the top of the box:
+![](scr_9.png)
+## Location page
+## It's location of our university:
+![](scr_10.png)
 
 
