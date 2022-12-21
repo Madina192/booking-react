@@ -1,7 +1,7 @@
 # Booking website for Ala-Too International University
 
 ## I created this website on React JS.
-## Since I'm alone in the team, I did frontend. But I also wrote backend using Node JS, Express JS, PostgreSQL, it works, but couldn't connect to frontend.
+## Since I'm alone in the team, I did frontend. But I also wrote backend using Node JS, Express JS, PostgreSQL, it works, but couldn't connect to frontend, it's in server folder.
 ## Link to website: https://madina192.github.io/
 ## Link to research: [https://drive.google.com/file/d/1oG_KnNiEgz4tBHDxBl-yF_-NHi11VVtB/view?usp=sharing](https://youtu.be/Eu4Q-w8HLu8)
 https://docs.google.com/spreadsheets/d/1edXRKym1vLBOWFwqievEdhlVD8wulvhV3fTdvstwMuQ/edit#gid=726709099
